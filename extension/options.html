@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tab Sorter – Settings</title>
+<link rel="stylesheet" href="ui.css">
+</head>
+<body class="options">
+  <h1>Send a site to a category</h1>
+  <div class="row">
+    <input id="newDomain" placeholder="example.com or any full link" aria-label="Domain or link">
+    <select id="newCategory" aria-label="Category"></select>
+    <button id="add" class="primary">Add</button>
+  </div>
+  <p id="addStatus" class="muted" role="status"></p>
+  <p class="muted">Tip: right-click any page or link and pick <b>Send this site to</b>.</p>
+
+  <h1>Categories</h1>
+  <p>Each category becomes a tab group. Domain matches always win, and the most specific domain wins;
+     keyword matches follow the order below.</p>
+  <ul>
+    <li><code>domains</code>: a site and its subdomains (<code>gouv.fr</code> matches <code>impots.gouv.fr</code>)</li>
+    <li><code>hostKeywords</code>: text found in the hostname (<code>moodle</code>)</li>
+    <li><code>urlKeywords</code>: text found in the full address (<code>/checkout</code>)</li>
+    <li><code>color</code>: grey, blue, red, yellow, green, pink, purple, cyan, orange</li>
+  </ul>
+  <textarea id="rules" spellcheck="false" aria-label="Rules as JSON"></textarea>
+
+  <h2>Never group</h2>
+  <p class="muted">One domain per line. These sites stay out of every group, even if a keyword matches.</p>
+  <textarea id="ignored" class="short" spellcheck="false" aria-label="Ignored domains"></textarea>
+
+  <div class="row actions">
+    <button id="save" class="primary">Save</button>
+    <button id="reset">Restore defaults</button>
+    <span id="saveStatus" class="muted" role="status"></span>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

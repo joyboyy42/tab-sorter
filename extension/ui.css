@@ -1,0 +1,53 @@
+:root {
+  --fg: #1f2328;
+  --muted: #57606a;
+  --bg: #ffffff;
+  --surface: #f6f8fa;
+  --border: #d0d7de;
+  --accent: #1f6feb;
+  --code: #f0f2f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e6edf3;
+    --muted: #9da7b3;
+    --bg: #1c1c1e;
+    --surface: #2d2d30;
+    --border: #444c56;
+    --code: #2d2d30;
+  }
+}
+
+body { font: 13px system-ui, sans-serif; color: var(--fg); background: var(--bg); margin: 0; }
+h1 { font-size: 14px; margin: 0 0 12px; }
+h2 { font-size: 14px; margin: 20px 0 6px; }
+button, select, input, textarea {
+  font: inherit; color: var(--fg); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 6px;
+}
+button { padding: 8px 12px; cursor: pointer; }
+button:hover { filter: brightness(0.96); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:disabled, select:disabled { opacity: 0.5; cursor: default; }
+select, input { padding: 6px 8px; }
+label { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+a { color: var(--accent); font-size: 12px; }
+code { background: var(--code); padding: 1px 4px; border-radius: 4px; }
+.muted { color: var(--muted); font-size: 12px; }
+.row { display: flex; gap: 6px; align-items: center; margin: 6px 0; }
+
+/* Popup */
+.popup { width: 260px; padding: 14px; }
+.popup > button { width: 100%; margin-bottom: 8px; }
+.popup #status { min-height: 16px; margin: 4px 0 6px; }
+.popup .site { border-block: 1px solid var(--border); padding: 10px 0; margin: 6px 0 8px; }
+.popup .row select { flex: 1; min-width: 0; }
+
+/* Options page */
+.options { font-size: 14px; max-width: 860px; margin: 24px auto; padding: 0 16px; }
+.options h1 { font-size: 18px; margin-top: 24px; }
+.options .row { flex-wrap: wrap; }
+.options .row input { flex: 1; min-width: 220px; }
+.options textarea { width: 100%; box-sizing: border-box; height: 55vh; padding: 10px; font: 12px ui-monospace, monospace; }
+.options textarea.short { height: 8em; }
+.options .actions { margin: 12px 0 40px; }

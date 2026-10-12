@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ui.css">
+</head>
+<body class="popup">
+  <h1>Tab Sorter</h1>
+  <button id="sort" class="primary">Sort now</button>
+  <button id="dedupe">Close duplicates</button>
+  <div id="status" class="muted" role="status"></div>
+
+  <section class="site">
+    <div class="muted">This site: <b id="domain">—</b></div>
+    <div class="row">
+      <select id="category" aria-label="Category for this site"></select>
+      <button id="assign">Save</button>
+    </div>
+    <div class="muted">New tabs from this site will go straight to this group.</div>
+  </section>
+
+  <label><input type="checkbox" id="auto"> Sort automatically</label>
+  <label><input type="checkbox" id="collapse"> Collapse inactive groups</label>
+  <a id="options" href="#">Edit categories</a>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
